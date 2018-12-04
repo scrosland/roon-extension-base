@@ -22,7 +22,7 @@ if git_needs_update || npm_needs_update -g || npm_needs_update ; then
     echo "*** Update required ***"
     set -x
     rm -f package-lock.json
-    git status
+    git fetch --dry-run --verbose
     npm outdated -g || true
     npm outdated || true
     killall node
